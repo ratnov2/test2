@@ -1,4 +1,7 @@
+import { Ref } from '@typegoose/typegoose';
 import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
+import { ActorModel } from '../actor/actor.model';
+import { GenreModel } from '../genre/genre.model';
 export interface MovieModel extends Base {
 }
 export declare class Parameter {
@@ -12,8 +15,10 @@ export declare class MovieModel extends TimeStamps {
     title: string;
     parameters: Parameter;
     rating?: number;
+    genres: Ref<GenreModel>[];
     countOpened?: number;
     videoUrl: string;
+    actors: Ref<ActorModel>[];
     slug: string;
     isSendTelegram?: boolean;
 }

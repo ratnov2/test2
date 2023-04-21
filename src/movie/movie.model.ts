@@ -1,7 +1,7 @@
 import { prop, Ref } from '@typegoose/typegoose'
 import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses'
-// import { ActorModel } from '../actor/actor.model'
-// import { GenreModel } from '../genre/genre.model'
+import { ActorModel } from '../actor/actor.model'
+import { GenreModel } from '../genre/genre.model'
 
 export interface MovieModel extends Base {}
 
@@ -32,8 +32,8 @@ export class MovieModel extends TimeStamps {
 	@prop({ default: 4.0 })
 	rating?: number
 
-	// @prop({ ref: () => GenreModel })
-	// genres: Ref<GenreModel>[]
+	@prop({ ref: () => GenreModel })
+	genres: Ref<GenreModel>[]
 
 	@prop({ default: 0 })
 	countOpened?: number
@@ -41,8 +41,8 @@ export class MovieModel extends TimeStamps {
 	@prop({ unique: true })
 	videoUrl: string
 
-	// @prop({ ref: () => ActorModel })
-	// actors: Ref<ActorModel>[]
+	@prop({ ref: () => ActorModel })
+	actors: Ref<ActorModel>[]
 
 	@prop({ unique: true })
 	slug: string

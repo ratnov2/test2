@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MovieModel = exports.Parameter = void 0;
 const typegoose_1 = require("@typegoose/typegoose");
 const defaultClasses_1 = require("@typegoose/typegoose/lib/defaultClasses");
+const actor_model_1 = require("../actor/actor.model");
+const genre_model_1 = require("../genre/genre.model");
 class Parameter {
 }
 __decorate([
@@ -50,6 +52,10 @@ __decorate([
     __metadata("design:type", Number)
 ], MovieModel.prototype, "rating", void 0);
 __decorate([
+    (0, typegoose_1.prop)({ ref: () => genre_model_1.GenreModel }),
+    __metadata("design:type", Array)
+], MovieModel.prototype, "genres", void 0);
+__decorate([
     (0, typegoose_1.prop)({ default: 0 }),
     __metadata("design:type", Number)
 ], MovieModel.prototype, "countOpened", void 0);
@@ -57,6 +63,10 @@ __decorate([
     (0, typegoose_1.prop)({ unique: true }),
     __metadata("design:type", String)
 ], MovieModel.prototype, "videoUrl", void 0);
+__decorate([
+    (0, typegoose_1.prop)({ ref: () => actor_model_1.ActorModel }),
+    __metadata("design:type", Array)
+], MovieModel.prototype, "actors", void 0);
 __decorate([
     (0, typegoose_1.prop)({ unique: true }),
     __metadata("design:type", String)
