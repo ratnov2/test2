@@ -4,16 +4,17 @@ import { ConfigModule, ConfigService } from '@nestjs/config'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 
-
+import { GenreModule } from './genre/genre.module'
+import { ActorModule } from './actor/actor.module'
 import { AuthModule } from './auth/auth.module'
 import { getMongoConfig } from './config/mongo.config'
 // import { FilesModule } from './files/files.module'
+// import { TelegramModule } from './telegram/telegram.module'
+import { UserModule } from './user/user.module'
 
 import { TypegooseModule } from 'nestjs-typegoose'
-// import { PaymentModule } from './payment/payment.module';
-// import { UserModule } from './user/user.module'
-// import { MailModule } from './mail/mail.module';
-
+// import { RatingModule } from './rating/rating.module'
+import { MovieModule } from './movie/movie.module'
 
 @Module({
 	imports: [
@@ -23,11 +24,14 @@ import { TypegooseModule } from 'nestjs-typegoose'
 			inject: [ConfigService],
 			useFactory: getMongoConfig,
 		}),
+		MovieModule,
+		GenreModule,
+		ActorModule,
+		UserModule,
 		AuthModule,
 		// FilesModule,
-		// PaymentModule,
-		// UserModule,
-		// MailModule
+		// TelegramModule,
+		// RatingModule,
 	],
 	controllers: [AppController],
 	providers: [AppService],
