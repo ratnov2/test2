@@ -15,6 +15,7 @@ const genre_module_1 = require("./genre/genre.module");
 const actor_module_1 = require("./actor/actor.module");
 const auth_module_1 = require("./auth/auth.module");
 const mongo_config_1 = require("./config/mongo.config");
+const files_module_1 = require("./files/files.module");
 const user_module_1 = require("./user/user.module");
 const nestjs_typegoose_1 = require("nestjs-typegoose");
 const movie_module_1 = require("./movie/movie.module");
@@ -34,6 +35,7 @@ AppModule = __decorate([
             actor_module_1.ActorModule,
             user_module_1.UserModule,
             auth_module_1.AuthModule,
+            files_module_1.FilesModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

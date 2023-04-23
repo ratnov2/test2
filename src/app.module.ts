@@ -8,7 +8,7 @@ import { GenreModule } from './genre/genre.module'
 import { ActorModule } from './actor/actor.module'
 import { AuthModule } from './auth/auth.module'
 import { getMongoConfig } from './config/mongo.config'
-// import { FilesModule } from './files/files.module'
+import { FilesModule } from './files/files.module'
 // import { TelegramModule } from './telegram/telegram.module'
 import { UserModule } from './user/user.module'
 
@@ -29,7 +29,7 @@ import { MovieModule } from './movie/movie.module'
 		ActorModule,
 		UserModule,
 		AuthModule,
-		// FilesModule,
+		FilesModule,
 		// TelegramModule,
 		// RatingModule,
 	],
