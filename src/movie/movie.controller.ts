@@ -58,7 +58,6 @@ export class MovieController {
 	}
 
 	@Get(':id')
-	@Auth('admin')
 	async get(@Param('id', IdValidationPipe) id: string) {
 		return this.movieService.byId(id)
 	}
